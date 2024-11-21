@@ -1,4 +1,5 @@
 import { Github, Linkedin, Twitter, Instagram, Mail } from "lucide-react";
+import Profilepic from "./assets/Profile.png";
 
 const Footer = () => {
   return (
@@ -8,7 +9,7 @@ const Footer = () => {
           <div className="flex items-center space-x-4">
             <div className="w-12 h-12 rounded-full overflow-hidden">
               <img
-                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop"
+                src={Profilepic}
                 alt="Profile"
                 className="w-full h-full object-cover"
               />
