@@ -3,6 +3,7 @@ import { Github, ExternalLink } from "lucide-react";
 import Recipemaster from "./assets/Recipemaster.jpg";
 import Chatamte from "./assets/Chatmate.jpg";
 import Weather from "./assets/Weather.jpg";
+import BingWatch from "./assets/BIngwatch.jpg";
 
 const Projects = () => {
   const projects = [
@@ -46,20 +47,17 @@ const Projects = () => {
       demo: "https://weatherinfo2002.netlify.app/",
     },
     {
-      title: "TaskMet",
+      title: "BingeWatch",
       description:
-        "A task management web app to create, update, and manage tasks effectively with a simple UI.",
+        "An interactive website that recommends movies and TV shows based on your preferences, allowing users to easily add content to their personalized watchlist.",
       image: {
-        small:
-          "https://images.unsplash.com/photo-1507925921958-8a62f3d1a50d?w=400&h=300&fit=crop",
-        medium:
-          "https://images.unsplash.com/photo-1507925921958-8a62f3d1a50d?w=600&h=400&fit=crop",
-        large:
-          "https://images.unsplash.com/photo-1507925921958-8a62f3d1a50d?w=800&h=500&fit=crop",
+        small: BingWatch,
+        medium: BingWatch,
+        large: BingWatch,
       },
-      technologies: ["JavaScript", "HTML", "CSS"],
-      github: "https://github.com/yashu1113/Personal-Diary",
-      demo: "https://demo.com",
+      technologies: ["React", "Typescript", "TailwindCSS", "API"],
+      github: "https://github.com/yashu1113/Bingwatch",
+      demo: "https://bingewatch123.vercel.app/",
     },
   ];
 
@@ -91,14 +89,17 @@ const Projects = () => {
                 transition={{ duration: 0.6, delay: index * 0.2 }}
                 className="project-card bg-gray-800 rounded-lg overflow-hidden shadow-lg transform transition-all duration-300 hover:scale-105"
               >
-                <div className="relative aspect-video overflow-hidden">
-                  <img
-                    src={project.image.small}
-                    srcSet={`${project.image.small} 400w, ${project.image.medium} 600w, ${project.image.large} 800w`}
-                    sizes="(max-width: 640px) 400px, (max-width: 768px) 600px, 800px"
-                    alt={project.title}
-                    className="w-full h-auto object-contain transform transition-transform duration-300 hover:scale-110"
-                  />
+                <div className="relative overflow-hidden">
+                  {/* Adjusting image to take full width without cutting */}
+                  <div className="aspect-w-16 aspect-h-9">
+                    <img
+                      src={project.image.small}
+                      srcSet={`${project.image.small} 400w, ${project.image.medium} 600w, ${project.image.large} 800w`}
+                      sizes="(max-width: 640px) 400px, (max-width: 768px) 600px, 800px"
+                      alt={project.title}
+                      className="w-full h-full object-cover object-center transform transition-transform duration-300"
+                    />
+                  </div>
                 </div>
                 <div className="p-6">
                   <h3 className="text-xl font-bold text-white mb-2 hover:text-purple-500 transition-colors">
