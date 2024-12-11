@@ -4,6 +4,7 @@ import Recipemaster from "./assets/Recipemaster.jpg";
 import Chatamte from "./assets/Chatmate.jpg";
 import Weather from "./assets/Weather.jpg";
 import BingWatch from "./assets/BIngwatch.jpg";
+import NewsApp from "./assets/News-app.jpg";
 
 const Projects = () => {
   const projects = [
@@ -33,19 +34,7 @@ const Projects = () => {
       github: "https://github.com",
       demo: "https://demo.com",
     },
-    {
-      title: "Weatherforcast",
-      description:
-        "A simple weather app that shows the current weather and forecast using a weather API.",
-      image: {
-        small: Weather,
-        medium: Weather,
-        large: Weather,
-      },
-      technologies: ["React", "API"],
-      github: "https://github.com/yashu1113/Weather-app",
-      demo: "https://weatherinfo2002.netlify.app/",
-    },
+
     {
       title: "BingeWatch",
       description:
@@ -58,6 +47,32 @@ const Projects = () => {
       technologies: ["React", "Typescript", "TailwindCSS", "API"],
       github: "https://github.com/yashu1113/Bingwatch",
       demo: "https://bingewatch123.vercel.app/",
+    },
+    {
+      title: "News-App",
+      description:
+        "An interactive news website that fetches real-time headlines and articles using the News API, offering users the latest updates on global events.",
+      image: {
+        small: NewsApp,
+        medium: NewsApp,
+        large: NewsApp,
+      },
+      technologies: ["Typescript", "TailwindCSS", "API", "React", "shadcn-ui"],
+      github: "https://github.com/yashu1113/newsly-hub-portal",
+      demo: "https://newshub-theta.vercel.app/",
+    },
+    {
+      title: "Weatherforcast",
+      description:
+        "A simple weather app that shows the current weather and forecast using a weather API.",
+      image: {
+        small: Weather,
+        medium: Weather,
+        large: Weather,
+      },
+      technologies: ["React", "API"],
+      github: "https://github.com/yashu1113/Weather-app",
+      demo: "https://weatherinfo2002.netlify.app/",
     },
   ];
 
