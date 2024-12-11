@@ -105,14 +105,14 @@ const Projects = () => {
                 className="project-card bg-gray-800 rounded-lg overflow-hidden shadow-lg transform transition-all duration-300 hover:scale-105"
               >
                 <div className="relative overflow-hidden">
-                  {/* Adjusting image to take full width without cutting */}
-                  <div className="aspect-w-16 aspect-h-9">
+                  {/* Hover effect for image zoom */}
+                  <div className="aspect-w-16 aspect-h-9 overflow-hidden">
                     <img
                       src={project.image.small}
                       srcSet={`${project.image.small} 400w, ${project.image.medium} 600w, ${project.image.large} 800w`}
                       sizes="(max-width: 640px) 400px, (max-width: 768px) 600px, 800px"
                       alt={project.title}
-                      className="w-full h-full object-cover object-center transform transition-transform duration-300"
+                      className="w-full h-full object-cover object-center transition-transform duration-300 transform hover:scale-105"
                     />
                   </div>
                 </div>
