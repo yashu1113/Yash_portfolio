@@ -44,9 +44,9 @@ const Projects = () => {
         medium: BingWatch,
         large: BingWatch,
       },
-      technologies: ["React", "Typescript", "TailwindCSS", "API"],
+      technologies: ["React", "Typescript", "TailwindCSS", "API", "shadcn-ui"],
       github: "https://github.com/yashu1113/Bingwatch",
-      demo: "https://bingewatch123.vercel.app/",
+      demo: "bingwatch.vercel.app",
     },
     {
       title: "News-App",
