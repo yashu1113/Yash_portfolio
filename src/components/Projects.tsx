@@ -46,7 +46,7 @@ const Projects = () => {
       },
       technologies: ["React", "Typescript", "TailwindCSS", "API", "shadcn-ui"],
       github: "https://github.com/yashu1113/Bingwatch",
-      demo: "bingwatch.vercel.app",
+      demo: "https://bingwatch.vercel.app/",
     },
     {
       title: "News-App",
