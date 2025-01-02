@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Github, Linkedin, Mail, FileText, ArrowRight } from "lucide-react";
 import Profilepic from "./assets/Profile.png";
+import Resume from "./assets/web developer .pdf";
 
 const TechIcon = ({ icon, label }: { icon: string; label: string }) => (
   <motion.div
@@ -108,7 +109,7 @@ const Home = () => {
               <ArrowRight className="w-5 h-5" />
             </a>
             <a
-              href="https://drive.google.com/drive/folders/1oJy9qtfWa7AYINjKFa41-3f4s1qV7WyK"
+              href={Resume}
               download
               className="px-6 py-3 border-2 border-purple-400 text-purple-400 rounded-full hover:bg-purple-400 hover:text-white transition-colors flex items-center space-x-2 transform hover:scale-105 duration-200"
             >
