@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Github, Linkedin, Mail, FileText, ArrowRight } from "lucide-react";
 import Profilepic from "./assets/Profile.png";
-import Resume from "./assets/YashChoudhari_Resume.pdf";
+import Resume from "./assets/Yash  Choudhari Resume.pdf";
 
 const TechIcon = ({ icon, label }: { icon: string; label: string }) => (
   <motion.div
