@@ -8,6 +8,7 @@ const Navbar = () => {
   const navItems = [
     { name: 'Home', href: '#home' },
     { name: 'Education', href: '#education' },
+    { name: 'Experience', href: '#experience' },
     { name: 'Projects', href: '#projects' },
     { name: 'Skills', href: '#skills' },
     { name: 'Contact', href: '#contact' },
@@ -27,14 +28,18 @@ const Navbar = () => {
       className={`fixed w-full z-50 transition-all duration-300 ${
         scrolled 
           ? 'bg-white/90 backdrop-blur-sm shadow-lg h-16' 
-          : 'bg-transparent h-20'
+          : 'bg-gray-900/40 backdrop-blur-sm h-20'
       }`}
     >
       <div className="max-w-6xl mx-auto px-4 h-full">
         <div className="flex items-center justify-between h-full">
           <a 
             href="#home" 
-            className="text-xl font-bold text-purple-600 hover:text-purple-700 transition-colors"
+            className={`text-xl font-bold transition-colors ${
+              scrolled
+                ? 'text-purple-700 hover:text-purple-800'
+                : 'text-white hover:text-cyan-300'
+            }`}
           >
             Portfolio
           </a>
@@ -44,10 +49,18 @@ const Navbar = () => {
               <a
                 key={item.name}
                 href={item.href}
-                className="text-gray-700 hover:text-purple-600 px-3 py-2 text-sm font-medium transition-colors relative group"
+                className={`px-3 py-2 text-sm font-semibold transition-colors relative group ${
+                  scrolled
+                    ? 'text-gray-800 hover:text-purple-700'
+                    : 'text-gray-100 hover:text-cyan-300'
+                }`}
               >
                 {item.name}
-                <span className="absolute bottom-0 left-0 w-full h-0.5 bg-purple-600 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left" />
+                <span
+                  className={`absolute bottom-0 left-0 w-full h-0.5 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left ${
+                    scrolled ? 'bg-purple-600' : 'bg-cyan-300'
+                  }`}
+                />
               </a>
             ))}
           </div>
@@ -55,7 +68,11 @@ const Navbar = () => {
           <div className="md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="p-2 rounded-md text-gray-700 hover:bg-gray-100 transition-colors focus:outline-none focus:ring-2 focus:ring-purple-500"
+              className={`p-2 rounded-md transition-colors focus:outline-none focus:ring-2 ${
+                scrolled
+                  ? 'text-gray-800 hover:bg-gray-100 focus:ring-purple-500'
+                  : 'text-white hover:bg-white/10 focus:ring-cyan-300'
+              }`}
               aria-label="Toggle menu"
             >
               {isOpen ? <X size={24} /> : <Menu size={24} />}

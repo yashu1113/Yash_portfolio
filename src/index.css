@@ -35,27 +35,35 @@
 
 @layer components {
   .social-link {
-    @apply transition-all duration-300 hover:-translate-y-1;
+    @apply relative inline-flex h-12 w-12 -translate-y-3 items-center justify-center rounded-full border-2 ring-2 ring-white/10 shadow-2xl backdrop-blur-sm transition-all duration-200;
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.35);
   }
 
-  .social-link.linkedin:hover {
-    @apply text-[#0A66C2];
+  .social-link:hover {
+    transform: translateY(-0.25rem) scale(1.06);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.55);
   }
 
-  .social-link.github:hover {
-    @apply text-[#24292F];
+  .social-link.linkedin {
+    @apply border-[#0A66C2] bg-[#0A66C2] text-white;
   }
 
-  .social-link.instagram:hover svg {
-    fill: url(#instagram-gradient);
+  .social-link.github {
+    @apply border-white bg-white text-[#24292F];
   }
 
-  .social-link.twitter:hover {
-    @apply text-[#1DA1F2];
+  .social-link.instagram {
+    border-color: #f77737;
+    color: #ffffff;
+    background-image: linear-gradient(135deg, #833ab4 0%, #fd1d1d 50%, #f77737 100%);
   }
 
-  .social-link.email:hover {
-    @apply text-[#EA4335];
+  .social-link.twitter {
+    @apply border-[#1DA1F2] bg-[#1DA1F2] text-white;
+  }
+
+  .social-link.email {
+    @apply border-[#EA4335] bg-[#EA4335] text-white;
   }
 
   /* Scroll Animation Classes */

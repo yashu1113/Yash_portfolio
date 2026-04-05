@@ -11,14 +11,6 @@ const Skills = () => {
 
   const primarySkills = [
     {
-      name: "HTML",
-      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
-    },
-    {
-      name: "CSS",
-      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",
-    },
-    {
       name: "JavaScript",
       icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
     },
@@ -35,8 +27,16 @@ const Skills = () => {
       icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg",
     },
     {
-      name: "Bootstrap",
-      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg",
+      name: "MongoDB",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg",
+    },
+    {
+      name: "Express",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg",
+    },
+    {
+      name: "TypeScript",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg",
     },
 
     {
@@ -56,20 +56,20 @@ const Skills = () => {
 
   const secondarySkills = [
     {
-      name: "MongoDB",
-      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg",
-    },
-    {
-      name: "Express",
-      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg",
-    },
-    {
-      name: "TypeScript",
-      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg",
-    },
-    {
       name: "AWS",
       icon: AWS,
+    },
+    {
+      name: "GitHub Actions",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/githubactions/githubactions-original.svg",
+    },
+    {
+      name: "Docker",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg",
+    },
+    {
+      name: "Kubernetes",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg",
     },
   ];
 
@@ -86,18 +86,18 @@ const Skills = () => {
       <motion.div
         ref={cardRef}
         whileHover={{ scale: 1.05 }}
-        className={`p-6 rounded-xl shadow-md transition-all duration-300 hover:shadow-xl ${
+        className={`group p-6 rounded-xl shadow-md transition-all duration-300 hover:shadow-xl ${
           isPrimary
-            ? "bg-blue-50 dark:bg-blue-900/20"
-            : "bg-gray-50 dark:bg-gray-800/50"
+            ? "bg-gradient-to-br from-cyan-50 to-blue-50 dark:from-cyan-900/20 dark:to-blue-900/20"
+            : "bg-white dark:bg-gray-800/70"
         }`}
       >
         <div className="flex flex-col items-center space-y-4">
-          <div className="w-16 h-16 flex items-center justify-center">
+          <div className="w-16 h-16 flex items-center justify-center rounded-2xl bg-white shadow-sm ring-1 ring-gray-200 dark:bg-gray-700/80 dark:ring-gray-600">
             <img
               src={skill.icon}
               alt={`${skill.name} icon`}
-              className="w-12 h-12 object-contain transition-transform duration-300 group-hover:scale-110"
+              className="w-11 h-11 object-contain transition-transform duration-300 group-hover:scale-110"
             />
           </div>
           <h3 className="text-lg font-medium text-gray-900 dark:text-gray-100">
@@ -109,7 +109,10 @@ const Skills = () => {
   };
 
   return (
-    <section id="skills" className="py-20 bg-white dark:bg-gray-900">
+    <section
+      id="skills"
+      className="py-20 bg-gradient-to-b from-slate-50 via-white to-slate-100 dark:from-gray-900 dark:via-gray-900 dark:to-gray-950"
+    >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="space-y-12">
           <div ref={titleRef} className="text-center">

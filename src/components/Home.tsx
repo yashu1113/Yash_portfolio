@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Github, Linkedin, Mail, FileText, ArrowRight } from "lucide-react";
 import Profilepic from "./assets/Profile.png";
-import Resume from "./assets/Yash  Choudhari Resume.pdf";
+import Resume from "./assets/Yash_Choudhari_CV.pdf";
 
 const TechIcon = ({ icon, label }: { icon: string; label: string }) => (
   <motion.div
@@ -128,22 +128,32 @@ const Home = () => {
               {
                 icon: <Github className="w-6 h-6" />,
                 href: "https://github.com/yashu1113",
+                socialClass: "github",
+                ariaLabel: "GitHub",
+                openInNewTab: true,
               },
               {
                 icon: <Linkedin className="w-6 h-6" />,
                 href: "https://www.linkedin.com/in/yash-choudhari-a2784522b",
+                socialClass: "linkedin",
+                ariaLabel: "LinkedIn",
+                openInNewTab: true,
               },
               {
                 icon: <Mail className="w-6 h-6" />,
-                href: "yashchoudhari4301@gmail.com",
+                href: "mailto:yashchoudhari4301@gmail.com",
+                socialClass: "email",
+                ariaLabel: "Email",
+                openInNewTab: false,
               },
             ].map((social, index) => (
               <a
                 key={index}
                 href={social.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-400 hover:text-purple-400 transform transition-all duration-200 hover:scale-110"
+                target={social.openInNewTab ? "_blank" : undefined}
+                rel={social.openInNewTab ? "noopener noreferrer" : undefined}
+                className={`social-link ${social.socialClass}`}
+                aria-label={social.ariaLabel}
               >
                 {social.icon}
               </a>

@@ -2,12 +2,26 @@ import { motion } from "framer-motion";
 import { Github, ExternalLink } from "lucide-react";
 import Recipemaster from "./assets/Recipemaster.jpg";
 import Chatamte from "./assets/Chatmate.jpg";
-import Weather from "./assets/Weather.jpg";
 import BingWatch from "./assets/BIngwatch.jpg";
 import NewsApp from "./assets/News-app.jpg";
+import SlackSnowflakeBot from "./assets/Gemini_Generated_Image_52ycjj52ycjj52yc.png";
 
 const Projects = () => {
   const projects = [
+    {
+      title: "Slack-Snowflake User Management Bot",
+      description:
+        "A Slack-integrated user management bot that onboards users, resets Snowflake passwords, and dynamically creates and assigns roles in Snowflake. It also uses asynchronous workflows to keep Slack commands responsive and avoid API timeout issues during longer admin operations.",
+      emphasis: true,
+      image: {
+        small: SlackSnowflakeBot,
+        medium: SlackSnowflakeBot,
+        large: SlackSnowflakeBot,
+      },
+      technologies: ["Node.js", "Express.js", "Snowflake", "Slack API"],
+      github: "https://github.com/yashu1113/slack-user-management-bot",
+      demo: "https://github.com/yashu1113/slack-user-management-bot",
+    },
     {
       title: "RecipeMaster",
       description:
@@ -31,8 +45,8 @@ const Projects = () => {
         large: Chatamte,
       },
       technologies: ["React", "Node.js", "MongoDB", "Express", "Socket.io"],
-      github: "https://github.com",
-      demo: "https://demo.com",
+      github: "https://github.com/yashu1113/Real-time-chat-app",
+      demo: "https://cheatchatbyyash.vercel.app/signup",
     },
 
     {
@@ -60,19 +74,6 @@ const Projects = () => {
       technologies: ["Typescript", "TailwindCSS", "API", "React", "shadcn-ui"],
       github: "https://github.com/yashu1113/newsly-hub-portal",
       demo: "https://newshub-theta.vercel.app/",
-    },
-    {
-      title: "Weatherforcast",
-      description:
-        "A simple weather app that shows the current weather and forecast using a weather API.",
-      image: {
-        small: Weather,
-        medium: Weather,
-        large: Weather,
-      },
-      technologies: ["React", "API"],
-      github: "https://github.com/yashu1113/Weather-app",
-      demo: "https://weatherinfo2002.netlify.app/",
     },
   ];
 
@@ -116,24 +117,48 @@ const Projects = () => {
                     />
                   </div>
                 </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-bold text-white mb-2 hover:text-purple-500 transition-colors">
+                <div className={project.emphasis ? "p-8" : "p-6"}>
+                  <h3
+                    className={`font-bold text-white hover:text-purple-500 transition-colors ${
+                      project.emphasis ? "text-4xl mb-5" : "text-2xl mb-3"
+                    }`}
+                  >
                     {project.title}
                   </h3>
-                  <p className="text-gray-400 mb-4">{project.description}</p>
-                  <div className="flex flex-wrap gap-2 mb-4">
+                  <p
+                    className={`text-gray-300 ${
+                      project.emphasis
+                        ? "text-xl leading-9 mb-7"
+                        : "text-base leading-7 mb-5"
+                    }`}
+                  >
+                    {project.description}
+                  </p>
+                  <div
+                    className={`flex flex-wrap gap-2 ${
+                      project.emphasis ? "mb-7" : "mb-4"
+                    }`}
+                  >
                     {project.technologies.map((tech, i) => (
                       <span
                         key={i}
-                        className={`px-3 py-1 text-sm rounded-full text-white transition-colors ${
+                        className={`rounded-full text-white transition-colors ${
+                          project.emphasis ? "px-4 py-2 text-base" : "px-3 py-1 text-sm"
+                        } ${
                           tech === "React"
                             ? "bg-blue-500"
                             : tech === "Node.js"
                             ? "bg-green-500"
+                            : tech === "Express.js"
+                            ? "bg-gray-700"
                             : tech === "MongoDB"
                             ? "bg-green-800"
                             : tech === "Express"
                             ? "bg-gray-700"
+                            : tech === "Snowflake"
+                            ? "bg-sky-500"
+                            : tech === "Slack API"
+                            ? "bg-violet-600"
                             : tech === "Socket.io"
                             ? "bg-gray-900"
                             : tech === "API"
@@ -149,14 +174,18 @@ const Projects = () => {
                       </span>
                     ))}
                   </div>
-                  <div className="flex gap-4">
+                  <div
+                    className={`flex gap-4 ${
+                      project.emphasis ? "text-lg" : ""
+                    }`}
+                  >
                     <a
                       href={project.github}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-purple-500 flex items-center hover:text-white transition-all"
                     >
-                      <Github size={20} className="mr-1" />
+                      <Github size={project.emphasis ? 22 : 20} className="mr-1" />
                       Code
                     </a>
                     <a
@@ -165,7 +194,7 @@ const Projects = () => {
                       rel="noopener noreferrer"
                       className="text-purple-500 flex items-center hover:text-white transition-all"
                     >
-                      <ExternalLink size={20} className="mr-1" />
+                      <ExternalLink size={project.emphasis ? 22 : 20} className="mr-1" />
                       Live Demo
                     </a>
                   </div>

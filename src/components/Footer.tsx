@@ -79,7 +79,7 @@ const Footer = () => {
                 <Twitter className="w-6 h-6" />
               </a>
               <a
-                href="yashchoudhari4301@gmail.com"
+                href="mailto:yashchoudhari4301@gmail.com"
                 className="social-link email"
                 aria-label="Email"
               >
